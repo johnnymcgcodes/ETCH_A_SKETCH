@@ -1,21 +1,17 @@
 .board {
-  position: relative;
+position: relative;
 width: auto;
-height: 1rem;
-padding-bottom: 20%;
-overflow: hidden;
+overflow: hidden; 
 color: white;
-
 }
 
 
 #container {
-
 display: grid;
 width:100vw;
-height: fit-content;
+height: 100vh;
 grid-template-columns: fit-content(100%); 
-grid-template-rows: fit-content(100%);
+
 }
 
 @keyframes hover {
@@ -25,7 +21,6 @@ grid-template-rows: fit-content(100%);
   100% {
     background: crimson;
   }
-
 }
 
 .board {
@@ -43,4 +38,5 @@ grid-template-rows: fit-content(100%);
 }
 body, #container{
   width: 500px;
+  height: 500px;
 }
