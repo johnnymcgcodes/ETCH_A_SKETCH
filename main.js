@@ -1,29 +1,32 @@
 let gridAmount = 16;
+let gridSquared = Math.pow(gridAmount, 2);
 
-for (x=0; x<gridAmount;x++) {
+for (x=0; x<gridSquared;x++) {
     var board = document.createElement('div');
     board.className = "board";
-    board.innerHTML = (`Grid: ${x}`);
+   
     document.getElementById('container').appendChild(board);
+    document.getElementById("container").style.gridTemplateColumns = `repeat(${gridAmount}, 1fr)`;
 };
 
 function resetGrid() {
-  //document.getElementById("board").width = "200px";
-  //window.setInterval("refreshDiv()", 1);
+
   gridAmount = prompt("How many squares?", "");
-  if (gridAmount <= 100 && gridAmount > 0) {
+  if (gridAmount <= 100 && gridAmount > 3) {
     document.getElementById("container").innerHTML ="";
-  for (x=0; x<gridAmount;x++) {
+    gridSquared = Math.pow(gridAmount, 2);
+  for (x=0; x<gridSquared;x++) {
     var board = document.createElement('div');
     board.className = "board";
-    board.innerHTML = (`Grid: ${x}`);
+
     document.getElementById('container').appendChild(board);
+    document.getElementById("container").style.gridTemplateColumns = `repeat(${gridAmount}, 1fr)`;
   };
 } else if (isNaN(gridAmount)) {
-   alert("It is not a number. Please enter a number from 1 to 100", "");
+   alert("It is not a number. Please enter a number from 4 to 100", "");
    resetGrid();
 } else {
-    alert("Your number (" + gridAmount + ") is not in range. Please enter a number from 1 to 100", "");
+    alert("Your number (" + gridAmount + ") is not in range. Please enter a number from 4 to 100", "");
    resetGrid();
   };
 };
